@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(path = "/api/hits/")
 public class HitController {
 
     private final HitService hitService;
@@ -16,17 +17,17 @@ public class HitController {
         this.hitService = hitService;
     }
 
-    @GetMapping("/hits")
+    @GetMapping("/")
     List<Hit> getAll() {
         return hitService.getAllHits();
     }
 
-    @GetMapping("/hits/{id}")
-    Hit getOne(@PathVariable Long id){
+    @GetMapping("/{id}")
+    Hit getOne(@PathVariable Long id) {
         return hitService.getHit(id);
     }
 
-    @PostMapping("/hits")
+    @PostMapping("/")
     Hit newHit(@RequestBody HitRequest hitRequest) {
         return hitService.saveHit(hitRequest);
     }

@@ -5,11 +5,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class HitRequest {
-    private Double x;
+public class CreateTokenRequest {
 
-    private Double y;
+    private String username;
 
-    private Double r;
+    private String password;
 
 }
